@@ -3,7 +3,7 @@
 
 
 ## ツール
-[ツール](http://nyamogera.github.io/issue-template-generator)
+[issue-template-generator](http://nyamogera.github.io/issue-template-generator)
 
 
 ## 使い方
