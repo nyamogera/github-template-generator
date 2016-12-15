@@ -28,8 +28,8 @@
 
   function generateTemplate() {
     var repositoryUrl = document.getElementById("repository-url").value;
-    var title = encodeURI(document.getElementById("template-title").value);
-    var templateText = encodeURI(document.getElementById("template-text").value);
+    var title = encodeURIComponent(document.getElementById("template-title").value);
+    var templateText = encodeURIComponent(document.getElementById("template-text").value);
     var openUrl = repositoryUrl + "/issues/new?title=" + title + "&body=" + templateText;
     window.open(openUrl);
   }
