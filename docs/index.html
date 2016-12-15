@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GitHub Issueテンプレートジェネレータ</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+          integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+
+</head>
+<body>
+<script>
+  window.addEventListener("load", init);
+
+  function init() {
+  }
+
+  function generateTemplate() {
+    var repositoryUrl = document.getElementById("repository-url").value;
+    var title = encodeURI(document.getElementById("template-title").value);
+    var templateText = encodeURI(document.getElementById("template-text").value);
+    var openUrl =  repositoryUrl + "/issues/new?title=" + title + "&body=" + templateText;
+    window.open(openUrl);
+  }
+
+</script>
+<div class="container">
+    <div class="header clearfix">
+        <h3 class="text-muted">GithubのIssueテンプレートジェネレーター</h3>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div>
+                <div class="col-lg-2">
+                    リポジトリURL
+                </div>
+                <input id="repository-url" type="text" size="80" placeholder="https://github.com/nyamogera/github-template-generator">
+            </div>
+            <div>
+                <div class="col-lg-2" id="title">
+                    タイトル
+                </div>
+                <input id="template-title" type="text" size="40" placeholder="[バグ報告] *****************">
+            </div>
+            <div>
+                テンプレート
+                <div>
+                    <textarea id="template-text" cols="100" rows="20"></textarea>
+                </div>
+            </div>
+
+            <input type="button" onClick="generateTemplate()" id="generate" class="btn btn-lg btn-success" value="生成">
+        </div>
+
+        <footer class="footer">
+            <p>&copy; 2016 nyamogera</p>
+        </footer>
+    </div>
+
+</div> <!-- /container -->
+
+</body>
+</html>
